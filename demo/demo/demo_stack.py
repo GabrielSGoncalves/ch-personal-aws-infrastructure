@@ -1,6 +1,8 @@
 from aws_cdk import (
     Stack,
-    aws_ec2 as ec2
+    aws_ec2 as ec2,
+    aws_autoscaling as autoscaling,
+    aws_elasticloadbalancingv2 as elbv2
 )
 from constructs import Construct
 
@@ -26,7 +28,7 @@ class DemoStack(Stack):
             ]
         )
 
-        asg = ec2.AutoScalingGroup(
+        asg = autoscaling.AutoScalingGroup(
             self,
             "DemoASG",
             vpc=vpc,
@@ -48,7 +50,7 @@ class DemoStack(Stack):
             """
         )
 
-        lb = ec2.ApplicationLoadBalancer(
+        lb = elbv2.ApplicationLoadBalancer(
             self,
             "DemoALB",
             vpc=vpc,
