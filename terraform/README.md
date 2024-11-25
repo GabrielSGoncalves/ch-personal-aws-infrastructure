@@ -21,6 +21,7 @@ aws iam create-policy --policy-name TerraformServiceAccountPolicy --policy-docum
                 "glue:*",
                 "rds:*",
                 "kinesis:*"
+                "secretsmanager:*"
             ],
             "Resource": "*"
         }
@@ -69,5 +70,8 @@ provider "aws" {
   secret_key = var.aws_secret_key
 }
 ```
+Now we are ready to start using Terraform to build AWS infrastructure.
+
+
 
 
