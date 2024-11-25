@@ -163,3 +163,8 @@ cython_debug/
 ## Terraform sensitive variables
 *.tfvars
 .terraform/
+*.lock.hcl
+*.tfstate*
+
+# Local notebooks
+glue_local_development/
